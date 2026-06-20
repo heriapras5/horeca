@@ -3,8 +3,8 @@
         "builder": "NIXPACKS"
     },
     "deploy": {
-        "startCommand": "bash start.sh",
-        "healthcheckPath": "/",
+        "startCommand": "php artisan migrate --force 2>/dev/null || true && php artisan serve --host=0.0.0.0 --port=$PORT",
+        "healthcheckPath": "/health",
         "restartPolicyType": "on-failure",
         "restartPolicyMaxRetries": 10
     }

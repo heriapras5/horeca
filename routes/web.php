@@ -21,6 +21,11 @@ use App\Http\Controllers\Admin\AboutSettingController;
 use App\Http\Controllers\Admin\SlideController;
 use Illuminate\Support\Facades\Route;
 
+// Health check for Railway
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok']);
+});
+
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/kategori', [CategoryController::class, 'index'])->name('categories');
