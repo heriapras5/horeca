@@ -1,0 +1,8 @@
+[php]
+WEB_SERVER = false
+
+[phpexec]
+VERSION = "8.2"
+
+[phpframework]
+USING_LARAVEL = true
