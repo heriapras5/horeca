@@ -1,3 +1,5 @@
 #!/bin/bash
-php artisan migrate --force 2>/dev/null || echo "Skipping migration"
+echo "Running migrations..."
+php artisan migrate --force --verbose || echo "Migration failed, continuing..."
+echo "Starting Laravel server..."
 php artisan serve --host=0.0.0.0 --port=$PORT
